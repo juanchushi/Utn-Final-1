@@ -1,29 +1,26 @@
 import React from 'react'
 
-function Paginacion({prev , next , anterior , siguiente}) {
+function Paginacion({ pagina, setData, setPagina }) {
 
-    const handleAnterior = ( ) =>{
-        anterior()
-    }
-    const handleSiguiente = () =>{
-        siguiente()
+    const paginaSiguiente = async () => {
+        setPagina(pagina + 1)
+        fetch('https://rickandmortyapi.com/api/character/?page=' + pagina).then(response => response.json()).then(data => setData(data))
     }
 
-  return (
-    <div className='divNav'>
-        <div className='divNav'>
-        <nav>
-            <ul>
+    const paginaPrevia = async () => {
+        setPagina(pagina - 1)
+        fetch('https://rickandmortyapi.com/api/character/?page=' + pagina).then(response => response.json()).then(data => setData(data))
+    }
 
-                {prev ? (<li><button onClick={handleAnterior}>Anterior</button></li>) : null}         
-                    
-                { next ? (<li><button onClick={handleSiguiente}>Siguiente</button></li>) : null}
-
-            </ul>
-        </nav>
+    return (
+        <div className='divNav-container'>
+            <div className='divNav'>
+                <button className='botonNav' disabled={pagina < 2 ? true : false} onClick={paginaPrevia}>← Anterior</button>
+                <p className='pagina'>{pagina}</p>
+                <button className='botonNav' onClick={paginaSiguiente}>Siguiente →</button>
+            </div>
         </div>
-    </div>
-  )
+    )
 }
 
 export default Paginacion

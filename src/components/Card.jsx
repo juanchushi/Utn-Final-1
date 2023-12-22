@@ -3,9 +3,9 @@ const Card = ({ nombre, genero, especie, imagen }) => {
     return (
         <div className="card">
             <h1>{nombre}</h1>
-            <h2>{genero}</h2>
+            <h2>Genero: {genero}</h2>
             <div>
-                <p>{especie}</p>
+                <p>Especie: {especie}</p>
                 <div>
                     <img src={imagen} className="imagen"/>
                 </div>

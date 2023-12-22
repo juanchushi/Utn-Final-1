@@ -1,0 +1,79 @@
+.body{
+    background-color: rgb(226, 224, 224);
+    margin: 0;
+    padding: 0;
+}
+
+.header{
+    background-color: #364552;
+    color: whitesmoke;
+    padding: 50px 30px;
+}
+
+.header h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 60px;
+    cursor: pointer;
+    width: 570px;
+    margin: 0 auto;
+    background-color: #283642;
+    border-radius: 8px;
+    padding: 30PX;
+}
+
+header h1:hover{
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.cards{
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 40px;
+}
+
+.card {
+    width: 300px;
+    background-color: white;
+    margin: 15px 0px;
+    border-radius: 8px;
+    padding: 0;
+    cursor: pointer;
+    text-align: center;
+}
+
+.card:hover {
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+}
+
+.imagen {
+    width: 300px;
+    width: 300px;
+    margin: 0;
+    border-radius: 8px;
+}
+
+footer{
+    background-color: #222;
+    padding: 50px;
+    color: #fff;
+
+}
+footer section{
+    float: right;
+}
+footer p{
+    display: inline;
+}
+footer a{
+    color: gray;
+    text-decoration: none;
+}
+footer a:hover{
+    transition: color 0.3s ease;
+    color: cornflowerblue;
+}
